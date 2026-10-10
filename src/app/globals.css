@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #1b1b1b;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Light surfaces need a gray edge so buttons and cards stay visible. */
+.border-\[\#ececec\],
+.border-\[\#ededed\],
+.border-\[\#e6e6e6\],
+.border-\[\#f0f0f0\],
+.border-\[\#f3f3f4\] {
+  border-color: #bdbdbd;
+}
+
+/* Clickable controls get a gray hover and a darker press in light mode. */
+button:not(:disabled):not(.inset-0):not(.text-white):hover,
+a:not(.text-white):hover {
+  background-color: #d0d0d0;
+}
+
+button:not(:disabled):not(.inset-0):not(.text-white):active {
+  background-color: #b8b8b8;
+}
+
+button.text-white:not(:disabled):not(.inset-0):hover,
+a.text-white:hover,
+label.bg-black:hover {
+  background-color: #4d4d4d;
+  color: #ffffff;
+}
+
+button.text-white:not(:disabled):not(.inset-0):active,
+a.text-white:active,
+label.bg-black:active {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+button.text-white.bg-\[\#e11d48\]:not(:disabled):not(.inset-0):hover,
+button.text-white.bg-\[\#e11d48\]:not(:disabled):not(.inset-0):active {
+  background-color: #be123c;
+  color: #ffffff;
+}
+
+html[data-theme="night"] {
+  color-scheme: dark;
+}
+
+html[data-theme="night"] body {
+  background: #121212;
+  color: #f4f4f5;
+}
+
+html[data-theme="night"] .bg-white {
+  background-color: #1c1c1c;
+}
+
+html[data-theme="night"] .bg-\[\#f3f3f4\],
+html[data-theme="night"] .bg-\[\#f6f6f7\],
+html[data-theme="night"] .bg-\[\#f3f3f3\],
+html[data-theme="night"] .bg-\[\#ececee\],
+html[data-theme="night"] .bg-\[\#ececef\] {
+  background-color: #333333;
+}
+
+html[data-theme="night"] .bg-\[\#3f3f46\] {
+  background-color: #5a5a5a;
+}
+
+html[data-theme="night"] .text-\[\#1b1b1b\],
+html[data-theme="night"] .text-\[\#111\],
+html[data-theme="night"] .text-\[\#181818\],
+html[data-theme="night"] .text-\[\#585858\],
+html[data-theme="night"] .text-\[\#3f3f46\] {
+  color: #f4f4f5;
+}
+
+html[data-theme="night"] .text-\[\#6b7280\],
+html[data-theme="night"] .text-\[\#9ca3af\] {
+  color: #c8c8c8;
+}
+
+html[data-theme="night"] .border-\[\#ececec\],
+html[data-theme="night"] .border-\[\#ededed\],
+html[data-theme="night"] .border-\[\#e6e6e6\],
+html[data-theme="night"] .border-\[\#f0f0f0\],
+html[data-theme="night"] .border-\[\#f3f3f4\] {
+  border-color: #6e6e6e;
+}
+
+html[data-theme="night"] .placeholder\:text-\[\#585858\]::placeholder {
+  color: #a3a3a3;
+}
+
+html[data-theme="night"] input,
+html[data-theme="night"] textarea,
+html[data-theme="night"] select {
+  background-color: #1c1c1c;
+  color: #f4f4f5;
+  border-color: #6e6e6e;
+}
+
+html[data-theme="night"] button:not(:disabled):not(.inset-0):not(.text-white):hover,
+html[data-theme="night"] a:not(.text-white):hover {
+  background-color: #3a3a3a;
+}
+
+html[data-theme="night"] button:not(:disabled):not(.inset-0):not(.text-white):active {
+  background-color: #4e4e4e;
+}
+
+html[data-theme="night"] button.text-white:not(:disabled):not(.inset-0):hover,
+html[data-theme="night"] a.text-white:hover,
+html[data-theme="night"] label.bg-black:hover {
+  background-color: #5a5a5a;
+  color: #ffffff;
+}
+
+html[data-theme="night"] button.text-white:not(:disabled):not(.inset-0):active,
+html[data-theme="night"] a.text-white:active,
+html[data-theme="night"] label.bg-black:active {
+  background-color: #6a6a6a;
+  color: #ffffff;
+}
+
+html[data-theme="night"] button.text-white.bg-\[\#e11d48\]:not(:disabled):not(.inset-0):hover,
+html[data-theme="night"] button.text-white.bg-\[\#e11d48\]:not(:disabled):not(.inset-0):active {
+  background-color: #be123c;
+  color: #ffffff;
+}
+
+html[data-theme="night"] :focus-visible {
+  outline-color: #d4d4d4;
+}
+
+@media (max-width: 720px) {
+  [role="dialog"] {
+    padding: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
