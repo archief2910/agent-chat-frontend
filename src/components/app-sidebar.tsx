@@ -24,7 +24,6 @@ export function AppSidebar({ active, chatId = null }: { active: "tasks" | "libra
   }, []);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [notice, setNotice] = useState<string | null>(null);
   const [settings, setSettings] = useState<string | null>(null);
   const [menuId, setMenuId] = useState<string | null>(null);
   const chats = useQuery({ queryKey: ["chats", query], queryFn: () => api.listChats(query) });
@@ -94,9 +93,8 @@ export function AppSidebar({ active, chatId = null }: { active: "tasks" | "libra
           <Side label="New task" icon={<PlusIcon />} onClick={() => router.push("/")} />
           <Side label="Tasks" icon={<TasksIcon />} active={active === "tasks"} onClick={() => router.push("/tasks")} />
           <Side label="Library" icon={<LibraryIcon />} active={active === "library"} onClick={() => router.push("/library")} />
-          <Side label="API / MCP" icon={<ApiIcon />} onClick={() => setNotice("API / MCP is not connected yet.")} />
+          <Side label="API / MCP" icon={<ApiIcon />} onClick={() => { window.location.assign("https://agent-chat.mintlify.site/"); }} />
         </nav>
-        {notice ? <p className="px-4 pt-2 text-[12px] text-[#6b7280]">{notice}</p> : null}
         <div className="mt-6 px-4 text-[12px] text-[#9ca3af]">Recent tasks</div>
         <ul className="mt-2 min-h-0 flex-1 overflow-y-auto px-2">
           {tasks.slice(0, 8).map((chat) => (

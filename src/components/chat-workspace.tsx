@@ -458,7 +458,7 @@ export function ChatWorkspace({ chatId, view = "chat" }: { chatId: string | null
           <RailButton label="New task" onClick={() => openChat(null)}><PlusIcon /></RailButton>
           <RailButton label="Tasks" onClick={() => router.push("/tasks")}><TasksIcon /></RailButton>
           <RailButton label="Library" onClick={() => router.push("/library")}><LibraryIcon /></RailButton>
-          <RailButton label="API / MCP" onClick={() => setBanner("API / MCP is not connected yet.")}><ApiIcon /></RailButton>
+          <RailButton label="API / MCP" onClick={() => { window.location.assign("https://agent-chat.mintlify.site/"); }}><ApiIcon /></RailButton>
           <div className="mt-auto">
             <RailButton label="Settings" onClick={() => setSettings("account")}><GearIcon /></RailButton>
           </div>
@@ -492,7 +492,7 @@ export function ChatWorkspace({ chatId, view = "chat" }: { chatId: string | null
           <SideItem label="New task" detail="Ctrl+Shift+O" icon={<PlusIcon />} onClick={() => openChat(null)} />
           <SideItem label="Tasks" icon={<TasksIcon />} active={view === "tasks"} onClick={() => router.push("/tasks")} />
           <SideItem label="Library" icon={<LibraryIcon />} onClick={() => router.push("/library")} />
-          <SideItem label="API / MCP" icon={<ApiIcon />} onClick={() => setBanner("API / MCP is not connected yet.")} />
+          <SideItem label="API / MCP" icon={<ApiIcon />} onClick={() => { window.location.assign("https://agent-chat.mintlify.site/"); }} />
         </nav>
         <div className="mt-6 px-4 text-[12px] text-[#9ca3af]">Recent tasks</div>
         <ul className="mt-2 min-h-0 flex-1 overflow-y-auto px-2">
